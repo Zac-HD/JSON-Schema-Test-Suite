@@ -131,6 +131,42 @@
         ]
     },
     {
+        "description": "items with boolean false schema",
+        "schema": {
+            "items": [false]
+        },
+        "tests": [
+            {
+                "description": "array with no items is valid",
+                "data": [],
+                "valid": true
+            },
+            {
+                "description": "array with one item is invalid",
+                "data": [ false ],
+                "valid": false
+            }
+        ]
+    },
+    {
+        "description": "items with not-anything object schema",
+        "schema": {
+            "items": [{"not": {}}]
+        },
+        "tests": [
+            {
+                "description": "array with no items is valid",
+                "data": [],
+                "valid": true
+            },
+            {
+                "description": "array with one item is invalid",
+                "data": [ null ],
+                "valid": false
+            }
+        ]
+    },
+    {
         "description": "items and subitems",
         "schema": {
             "definitions": {
